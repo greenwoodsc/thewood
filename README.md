@@ -10,6 +10,9 @@ I'll handle this later 🐸
   `.github/workflows/prod-deploy.yml` still rsyncs to the old box. Needs a new
   deploy key on woozie and the `GIT_ZEKE_KEY` / `GIT_ZEKE_HOST` / `GIT_ZEKE_PORT` /
   `GIT_ZEKE_USER` secrets replaced before pushing to `prod` will work again.
+- deps are stale 🧟 — dependabot reports 160 vulnerabilities on the default branch
+  (4 critical, 76 high, 68 moderate, 12 low). the workflows also pin node 18, which
+  is past EOL, so the build side likely needs a bump alongside the deploy rework.
 - `.devcontainer/devcontainer.json` won't parse — missing comma after the
   `features` block.
 
